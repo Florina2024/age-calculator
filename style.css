@@ -4,23 +4,30 @@
   box-sizing: border-box;
 }
 
-.container {
-  width: 100%;
-  min-height: 100vh;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background: linear-gradient(135deg, #4203a9, #90bafc);
+}
+
+.container {
+  width: 50%;
+  min-height: 70vh;
   color: #fff;
-  padding: 30px;
+  padding: 40px;
 }
 
 .calculator {
   width: 100%;
   max-width: 600px;
-  margin-left: 10%;
   margin-right: 10%;
 }
 
 .calculator h1 {
   font-size: 60px;
+  text-align: center;
 }
 
 .input-box {
@@ -69,6 +76,7 @@
 
 #result {
   font-size: 20px;
+  text-align: center;
 }
 
 #result span {
@@ -77,51 +85,93 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .container {
+    width: 60%;
+  }
+
+  .calculator {
+    margin-right: 5%;
+  }
+
+  .calculator h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 70%;
+  }
+
   .calculator h1 {
     font-size: 40px;
   }
 
   .input-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input-box input {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .input-box button {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
     padding: 20px;
-    margin: 30px 0;
-    margin-right: 30px;
+  }
+
+  .calculator h1 {
+    font-size: 35px;
+  }
+
+  .input-box {
+    padding: 20px;
   }
 
   .input-box input {
     font-size: 16px;
+    padding: 10px 15px;
   }
 
   .input-box button {
-    padding: 12px 20px;
-    font-size: 15px;
-  }
-
-  #result {
-    font-size: 18px;
+    font-size: 16px;
+    padding: 10px 20px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+  .container {
+    width: 90%;
+  }
+
   .calculator h1 {
     font-size: 30px;
   }
 
   .input-box {
-    flex-direction: column;
-    margin-right: 45px;
+    margin: 20px 0;
   }
 
   .input-box input {
-    margin: 0 0 20px 0;
-    width: 100%;
+    font-size: 14px;
   }
 
   .input-box button {
-    width: 100%;
+    font-size: 14px;
   }
 
   #result {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
